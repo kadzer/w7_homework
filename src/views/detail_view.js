@@ -18,8 +18,8 @@ DetailView.prototype.render = function (beer) {
   const details = this.createDetails(beer);
   this.container.appendChild(details);
 
-  // const image = this.createImage(beer);
-  // this.container.appendChild(image);
+  const image = this.createImage(beer);
+  this.container.appendChild(image);
 };
 
 DetailView.prototype.createDetails = function (beer) {
@@ -30,10 +30,10 @@ DetailView.prototype.createDetails = function (beer) {
   return detailDiv;
 };
 
-// DetailView.prototype.createImage = function (beer) {
-//   const img = document.createElement('img');
-//   img.src = beer.image_url;
-//   img.classList.add("image");
-//   return img;
-// };
+DetailView.prototype.createImage = function (beer) {
+  const img = document.createElement('img');
+  img.src = beer.image_url;
+  img.classList.add("image");
+  return img;
+};
 module.exports = DetailView;
