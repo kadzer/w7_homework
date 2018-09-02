@@ -7,15 +7,11 @@ const Beers = function(){
 
 Beers.prototype.bindEvents = function () {
   PubSub.subscribe("SelectView:name-selected", (event) => {
-    console.log(event.details);
+    const beer = this.beers[event.detail];
+    PubSub.publish("Beers:beer-ready", beer);
   })
 };
-// CountryList.prototype.bindEvents = function(){
-//   PubSub.subscribe("SelectView:name-selected", (event) => {
-//     const country = this.countries[event.detail];
-//     PubSub.publish("CountryList:country-ready", country)
-//   })
-// }
+
 Beers.prototype.getData = function () {
   const request = new Request("https://api.punkapi.com/v2/beers");
   request.get((data) => {

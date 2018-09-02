@@ -8,4 +8,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const beers = new Beers;
   beers.getData();
+  beers.bindEvents();
 })
