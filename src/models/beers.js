@@ -20,7 +20,6 @@ Beers.prototype.getData = function () {
       return beer.name;
     })
     PubSub.publish("Beers:names-ready", names)
-    console.log(names);
   })
 };
 
